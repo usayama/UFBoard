@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  react:
+    build:
+      context: ./
+      dockerfile: react.dockerfile
+    container_name: react
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./app:/app:cached
+    tty: true
+    stdin_open: true
+    command: npm run start
+
+  firebase:
+    build:
+      context: ./
+      dockerfile: firebase.dockerfile
+    container_name: firebase
+    ports:
+      - 5000:5000
+      - 9005:9005
+    working_dir: /app
+    volumes:
+      - ./app:/app:cached
+    tty: true
+    stdin_open: true
+    command: /bin/sh
