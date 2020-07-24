@@ -25,8 +25,7 @@ const SignInWithEmailAndPassword: React.FC = () => {
     event.preventDefault()
     auth
       .signInWithEmailAndPassword(email, password)
-      .then(response => {
-        console.log(response)
+      .then(() => {
         history.push('/')
       })
       .catch(error => {
