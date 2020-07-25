@@ -61,15 +61,15 @@ const SignUp: React.FC = () => {
       <form onSubmit={createUserWithEmailAndPassword}>
         <div>
           <label>メールアドレス</label>
-          <input type="email" name="email" placeholder="you@example.com" autoComplete="email" value={email} onChange={event => setEmail(event.target.value)} />
+          <input type="email" required name="email" placeholder="you@example.com" autoComplete="email" value={email} onChange={event => setEmail(event.target.value)} />
         </div>
         <div className="mt-2">
           <label>パスワード</label>
-          <input type="password" name="password" placeholder="パスワード" value={password} onChange={event => setPassword(event.target.value)} />
+          <input type="password" required name="password" placeholder="パスワード" value={password} onChange={event => setPassword(event.target.value)} />
         </div>
         <div className="mt-2">
           <label>表示名</label>
-          <input type="displayName" name="displayName" placeholder="名前太郎" autoComplete="displayName" value={displayName} onChange={event => setDisplayName(event.target.value)} />
+          <input type="displayName" required name="displayName" placeholder="名前太郎" autoComplete="displayName" value={displayName} onChange={event => setDisplayName(event.target.value)} />
         </div>
         <div>
           <button type="submit">新規登録</button>
