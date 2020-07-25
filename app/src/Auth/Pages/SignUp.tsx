@@ -48,9 +48,9 @@ const SignUp: React.FC = () => {
     })
     // ユーザ情報をFireStoreにも登録
     await db.collection('users').doc(result.user?.uid).set({
+      email: result.user?.email,
       displayName: result.user?.displayName,
-      photoURL: result.user?.photoURL,
-      email: result.user?.email
+      photoURL: result.user?.photoURL
     })
     // 存在確認メールを送る
     await auth.currentUser?.sendEmailVerification(actionCodeSettings)
